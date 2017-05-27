@@ -8,7 +8,7 @@ install:
 
 after_success:
   - git reset --hard
-  - react-scripts start
+  - react-scripts build
 
 env:
   global:
