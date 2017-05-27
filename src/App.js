@@ -59,7 +59,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <p>
-          Посчитаем разницу во времени
+          Посчитаем разницу во времени.
         </p>
         <input name="start" onChange={self.handleChange} value={this.state.start} maxLength="5" />
         <input name="end" onChange={self.handleChange} value={this.state.end} maxLength="5" />
