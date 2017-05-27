@@ -22,6 +22,7 @@ class App extends React.Component {
         end: value
       })
     }
+
     this.setState({
       [val.target.name]: value
     })
@@ -32,6 +33,7 @@ class App extends React.Component {
 
     if (res.length === 3 || res.length === 4) {
       const count = res.match(/\d/g).length
+
       if (count === 3 || count === 4) {
         res = res.replace(/(\d\d)(\d\d?)/g, '$1:$2')
       }
@@ -47,15 +49,12 @@ class App extends React.Component {
 
     res = `2017-12-31 ${res.replace(/(\.|\/|,)/g, ':')}`
     
-    console.log(res);
     return res
   }
 
   render() {
-    const self = this
-
-    const result = new Date((new Date(this.getTime(this.state.end))) - (new Date(this.getTime(this.state.start))))
-    console.log(result);
+    const self = this,
+      result   = new Date((new Date(this.getTime(this.state.end))) - (new Date(this.getTime(this.state.start))))
 
     return (
       <div className="App">
