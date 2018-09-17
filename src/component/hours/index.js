@@ -33,7 +33,6 @@ export default class Hours extends React.Component {
         <input
           className="hours-calc__input"
           onChange={this.handleChange}
-          defaultValue={percent}
           value={percent}
           />
           <div className="hours-calc__percent">%</div>
