@@ -1,5 +1,4 @@
 import React from 'react'
-import getNoun from 'get-noun'
 
 import './style.css'
 
@@ -15,17 +14,17 @@ export default class Timer extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
-  handleChange(val) {
-    let value = val.target.value
+  handleChange(event) {
+    let value = event.target.value
 
-    if (val.target.name === 'start') {
+    if (event.target.name === 'start') {
       this.setState({
         end: value
       })
     }
 
     this.setState({
-      [val.target.name]: value
+      [event.currentTarget.name]: value
     })
   }
 
@@ -54,23 +53,23 @@ export default class Timer extends React.Component {
   }
 
   render() {
-    const self = this,
-      result   = new Date((new Date(this.getTime(this.state.end))) - (new Date(this.getTime(this.state.start))))
-    const { percent, hours } = this.state
+    const { start, end } = this.state,
+      result = new Date((new Date(this.getTime(end))) - (new Date(this.getTime(start))))
+    
     return (
       <div className="timer-calc">
         <div className="timer-calc__text">
           Посчитаем разницу во времени.
         </div>
         <input
-          onChange={self.handleChange}
+          onChange={this.handleChange}
           maxLength="5"
           className="timer-calc__start"
           name="start"
           value={this.state.start}
           />
         <input
-          onChange={self.handleChange}
+          onChange={this.handleChange}
           maxLength="5"
           className="timer-calc__end"
           name="end"
