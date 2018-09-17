@@ -3,7 +3,7 @@ import getNoun from 'get-noun'
 
 import './style.css'
 
-export default class Hours extends React.Component {
+export default class Timer extends React.Component {
   constructor(props) {
     super(props)
     
