@@ -14,8 +14,23 @@ export default class Timer extends React.Component {
     this.handleChange = this.handleChange.bind(this)
   }
 
+  componentWillMount() {
+    const str = window.location.search.substr(1)
+    if (str.length) {
+      const time = str.split('=')[1].split('-')
+      this.setState((prevState, props) => ({
+        start: time[0],
+        end: time[1],
+      }))
+    }
+  }
+
   handleChange(event) {
     let value = event.target.value
+
+    if (value.length === 2 && parseInt(value, 10) > 24) {
+      value = '24'
+    }
 
     if (event.target.name === 'start') {
       this.setState({
