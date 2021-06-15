@@ -1,0 +1,35 @@
+.hours-calc {
+	display: flex;
+	width: 45em;
+	margin: 15px auto;
+	align-items: baseline;
+	justify-content: left;
+	flex-wrap: wrap;
+}
+
+.hours-calc__text {
+	width: 100%;
+	text-align: left;
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.hours-calc__input {
+	font-size: 14pt;
+	width: 4em;
+	border: 0;
+	border-bottom: 1px solid #ccc;
+	text-align: right;
+	padding: 0;
+	margin: 0;
+}
+
+.hours-calc__percent {
+	margin-left: .5em;
+	margin-right: 1em;
+}
+
+.hours-calc__result {
+	font-size: 14pt;
+	text-align: left;
+}
